@@ -1,0 +1,29 @@
+<div class="col-sm-6 col-sm-offset-3 text-center">
+	<form action="/users" method="post" class="col-xs-6">
+		<button class="btn btn-primary">Sign Up with Facebook</button>
+		<h4>OR</h4>
+		<% if flash[:reg_errors] %>
+			<% flash[:reg_errors].each do |reg_error| %>
+				<p><%= reg_error %></p>
+			<% end %>
+		<% end %>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="text" name="user[first_name]" class="form-control" placeholder="First Name">
+		<input type="text" name="user[last_name]" class="form-control" placeholder="Last Name">
+		<input type="text" name="user[email]" class="form-control" placeholder="Email">
+		<input type="password" name="user[password]" class="form-control" placeholder="Password">
+		<input type="password" name="user[password_confirmation]" class="form-control" placeholder="Confirm Password">
+		<input type="submit" class="btn btn-default pull-right" value="Register">
+	</form>
+	
+	<form action="/users/login" method="post" class="col-xs-6">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<h2>Log In</h2>
+		<% if flash[:login_error] %>
+			<%= flash[:login_error] %>
+		<% end %>
+		<input type="text" name="user[email]" class="form-control" placeholder="Email">
+		<input type="password" name="user[password]" class="form-control" placeholder="Password">
+		<input type="submit" class="btn btn-default pull-right" value="Log In">
+	</form>
+</div>

@@ -1,0 +1,34 @@
+<div class="col-sm-6 col-sm-offset-3">
+	<table class="table">
+		<h3>User Information</h3>
+		<tr>
+			<td>ID</td>
+			<td><%= @user.id %></td>
+		</tr>
+		<tr>
+			<td>First Name</td>
+			<td><%= @user.first_name %></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td><%= @user.last_name %></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<td>Password Digest</td>
+			<td><%= @user.password_digest %></td>
+		</tr>
+		<tr>
+			<td>Created At</td>
+			<td><%= @user.created_at %></td>
+		</tr>
+		<tr>
+			<td>Updated At</td>
+			<td><%= @user.updated_at %></td>
+		</tr>
+	</table>
+	<a href="/users/<%= @user.id %>/edit">Edit my profile</a>
+</div>
